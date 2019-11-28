@@ -53,7 +53,7 @@ for input_path, result_path in list(datasets('sample')) + list(datasets('secret'
                 timeout=time_limit
             )
         except subprocess.TimeoutExpired as e:
-            print('Time Limit Exceeded: {} second(s)'.format(time_limit), file=sys.stderr)
+            print('Time Limit Exceeded: {} second(s). On {}'.format(time_limit, result_path), file=sys.stderr)
             os.remove(output_path)
             exit(1)
 
