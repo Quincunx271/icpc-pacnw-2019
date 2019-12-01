@@ -24,9 +24,11 @@ while next_to_visit:
         if to in past: continue
         costs[to-1] = min(costs[cur -1] + 1, costs[to -1])
 
-        if to == N: break
+        if to == N:
+            print(costs[N - 1] - 1)
+            exit(0)
 
         next_to_visit.append(to)
         past.add(to)
 
-print(costs[to-1]-1)
+print(costs[N-1]-1)
